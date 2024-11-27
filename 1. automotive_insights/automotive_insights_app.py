@@ -99,7 +99,6 @@ st.sidebar.markdown("[Quellen](#quellen)", unsafe_allow_html=True)
 # Neuzulassungen
 
 
-
 # Daten laden
 data_neuzulassung = pd.read_csv('neuzulassung.csv', delimiter=';')
 
