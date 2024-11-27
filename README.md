@@ -8,5 +8,6 @@
  3. Entwicklung der Mobilität:
       Wie spiegeln sich technologische, politische und gesellschaftliche Veränderungen in den KFZ Neuzulassungen,
       der Effizienz von Kraftstoffarten und dem Ausbau der Ladeinfrastruktur wider
+      (Tableau Public)
 
     
