@@ -1,0 +1,1439 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='neuzulassung.csv (Mehrere Verbindungen)' inline='true' name='federated.0u9sclb004dqmt1843jvz1t7ysmk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='neuzulassung' name='textscan.09qn5c60pqyys91b1em7n0pofgyh'>
+            <connection class='textscan' directory='/Users/dominikvogel/Desktop/Neu- und Bestandsfahrzeuge Projekt/csv_listen' filename='neuzulassung.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='pkw_neuzulassung_kraftstoffart' name='textscan.1egpmf215rtknf12q99201g18vhx'>
+            <connection class='textscan' directory='/Users/dominikvogel/Desktop/Neu- und Bestandsfahrzeuge Projekt/csv_listen' filename='pkw_neuzulassung_kraftstoffart.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.09qn5c60pqyys91b1em7n0pofgyh' name='neuzulassung.csv' table='[neuzulassung#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='de_DE' separator=';'>
+            <column datatype='string' name='Antrieb' ordinal='0' />
+            <column datatype='date' date-parse-format='yyyy' name='Jahr' ordinal='1' />
+            <column datatype='integer' name='Belgium' ordinal='2' />
+            <column datatype='integer' name='Bulgaria' ordinal='3' />
+            <column datatype='integer' name='Czechia' ordinal='4' />
+            <column datatype='integer' name='Denmark' ordinal='5' />
+            <column datatype='integer' name='Germany' ordinal='6' />
+            <column datatype='integer' name='Estonia' ordinal='7' />
+            <column datatype='integer' name='Ireland' ordinal='8' />
+            <column datatype='integer' name='Greece' ordinal='9' />
+            <column datatype='integer' name='Spain' ordinal='10' />
+            <column datatype='integer' name='France' ordinal='11' />
+            <column datatype='integer' name='Croatia' ordinal='12' />
+            <column datatype='integer' name='Italy' ordinal='13' />
+            <column datatype='integer' name='Cyprus' ordinal='14' />
+            <column datatype='integer' name='Latvia' ordinal='15' />
+            <column datatype='integer' name='Lithuania' ordinal='16' />
+            <column datatype='integer' name='Luxembourg' ordinal='17' />
+            <column datatype='integer' name='Hungary' ordinal='18' />
+            <column datatype='integer' name='Malta' ordinal='19' />
+            <column datatype='integer' name='Netherlands' ordinal='20' />
+            <column datatype='integer' name='Austria' ordinal='21' />
+            <column datatype='integer' name='Poland' ordinal='22' />
+            <column datatype='integer' name='Portugal' ordinal='23' />
+            <column datatype='integer' name='Romania' ordinal='24' />
+            <column datatype='integer' name='Slovenia' ordinal='25' />
+            <column datatype='integer' name='Slovakia' ordinal='26' />
+            <column datatype='integer' name='Finland' ordinal='27' />
+            <column datatype='integer' name='Sweden' ordinal='28' />
+            <column datatype='integer' name='Iceland' ordinal='29' />
+            <column datatype='integer' name='Liechtenstein' ordinal='30' />
+            <column datatype='integer' name='Norway' ordinal='31' />
+            <column datatype='integer' name='Switzerland' ordinal='32' />
+            <column datatype='integer' name='United Kingdom' ordinal='33' />
+            <column datatype='integer' name='Bosnia and Herzegovina' ordinal='34' />
+            <column datatype='integer' name='Montenegro' ordinal='35' />
+            <column datatype='integer' name='Moldova' ordinal='36' />
+            <column datatype='integer' name='Georgia' ordinal='37' />
+            <column datatype='integer' name='Albania' ordinal='38' />
+            <column datatype='integer' name='Türkiye' ordinal='39' />
+            <column datatype='integer' name='Ukraine' ordinal='40' />
+            <column datatype='integer' name='Kosovo*' ordinal='41' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;de&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;de_DE&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Antrieb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Antrieb]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Antrieb</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LDE_RDE' />
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Jahr</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Jahr]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Jahr</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LDE_RDE' />
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Belgium</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Belgium]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Belgium</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bulgaria</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bulgaria]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Bulgaria</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Czechia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Czechia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Czechia</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Denmark</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Denmark]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Denmark</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Germany</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Germany]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Germany</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Estonia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Estonia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Estonia</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ireland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ireland]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Ireland</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Greece</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Greece]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Greece</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Spain</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Spain]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Spain</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>France</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[France]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>France</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Croatia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Croatia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Croatia</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Italy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Italy]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Italy</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cyprus</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cyprus]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Cyprus</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latvia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Latvia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Latvia</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lithuania</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Lithuania]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Lithuania</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Luxembourg</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Luxembourg]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Luxembourg</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hungary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Hungary]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Hungary</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Malta</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Malta]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Malta</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Netherlands</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Netherlands]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Netherlands</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Austria</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Austria]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Austria</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Poland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Poland]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Poland</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Portugal</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Portugal]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Portugal</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Romania</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Romania]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Romania</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Slovenia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Slovenia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Slovenia</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Slovakia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Slovakia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Slovakia</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Finland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Finland]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Finland</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sweden</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sweden]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Sweden</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Iceland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Iceland]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Iceland</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Liechtenstein</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Liechtenstein]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Liechtenstein</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Norway</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Norway]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Norway</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Switzerland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Switzerland]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Switzerland</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>United Kingdom</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[United Kingdom]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>United Kingdom</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bosnia and Herzegovina</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Bosnia and Herzegovina]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Bosnia and Herzegovina</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Montenegro</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Montenegro]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Montenegro</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Moldova</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Moldova]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Moldova</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Georgia</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Georgia]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Georgia</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Albania</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Albania]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Albania</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Türkiye</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Türkiye]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Türkiye</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ukraine</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ukraine]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Ukraine</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Kosovo*</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Kosovo*]</local-name>
+            <parent-name>[neuzulassung.csv]</parent-name>
+            <remote-alias>Kosovo*</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' datatype='integer' name='[Albania]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Austria]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Belgium]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Bosnia and Herzegovina]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Bulgaria]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Croatia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Cyprus]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Czechia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Denmark]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Estonia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Finland]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[France]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Georgia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Germany]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Greece]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Hungary]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Iceland]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Ireland]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Italy]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column datatype='date' name='[Jahr]' role='dimension' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[Kosovo*]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Latvia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Liechtenstein]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Lithuania]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Luxembourg]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Malta]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Moldova]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Montenegro]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Netherlands]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Norway]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Poland]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Portugal]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Romania]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Slovakia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Slovenia]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Spain]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Sweden]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Switzerland]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Türkiye]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Ukraine]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[United Kingdom]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+      <column caption='neuzulassung.csv' datatype='table' name='[__tableau_internal_object_id__].[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='de_DE' class='hyper' dbname='/var/folders/68/wdp6bkd956j0y2g7bs29cw540000gn/T/tableau-temp/#TableauTemp_0j4yaec1la4w9g1730a350r1hzbh.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/26/2024 02:59:44 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Antrieb</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Antrieb]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Antrieb</remote-alias>
+              <ordinal>0</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LDE_RDE' />
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Jahr</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Jahr]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Jahr</remote-alias>
+              <ordinal>1</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Belgium</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Belgium]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Belgium</remote-alias>
+              <ordinal>2</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Bulgaria</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Bulgaria]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Bulgaria</remote-alias>
+              <ordinal>3</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Czechia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Czechia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Czechia</remote-alias>
+              <ordinal>4</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Denmark</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Denmark]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Denmark</remote-alias>
+              <ordinal>5</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Germany</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Germany]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Germany</remote-alias>
+              <ordinal>6</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Estonia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Estonia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Estonia</remote-alias>
+              <ordinal>7</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Ireland</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Ireland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Ireland</remote-alias>
+              <ordinal>8</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Greece</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Greece]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Greece</remote-alias>
+              <ordinal>9</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Spain</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Spain]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Spain</remote-alias>
+              <ordinal>10</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>France</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[France]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>France</remote-alias>
+              <ordinal>11</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Croatia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Croatia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Croatia</remote-alias>
+              <ordinal>12</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Italy</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Italy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Italy</remote-alias>
+              <ordinal>13</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cyprus</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cyprus]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cyprus</remote-alias>
+              <ordinal>14</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Latvia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Latvia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Latvia</remote-alias>
+              <ordinal>15</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lithuania</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Lithuania]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Lithuania</remote-alias>
+              <ordinal>16</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Luxembourg</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Luxembourg]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Luxembourg</remote-alias>
+              <ordinal>17</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hungary</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Hungary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hungary</remote-alias>
+              <ordinal>18</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Malta</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Malta]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Malta</remote-alias>
+              <ordinal>19</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>30</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Netherlands</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Netherlands]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Netherlands</remote-alias>
+              <ordinal>20</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Austria</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Austria]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Austria</remote-alias>
+              <ordinal>21</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Poland</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Poland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Poland</remote-alias>
+              <ordinal>22</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Portugal</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Portugal]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Portugal</remote-alias>
+              <ordinal>23</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Romania</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Romania]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Romania</remote-alias>
+              <ordinal>24</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Slovenia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Slovenia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Slovenia</remote-alias>
+              <ordinal>25</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Slovakia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Slovakia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Slovakia</remote-alias>
+              <ordinal>26</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Finland</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Finland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Finland</remote-alias>
+              <ordinal>27</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sweden</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Sweden]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sweden</remote-alias>
+              <ordinal>28</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Iceland</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Iceland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Iceland</remote-alias>
+              <ordinal>29</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Liechtenstein</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Liechtenstein]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Liechtenstein</remote-alias>
+              <ordinal>30</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Norway</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Norway]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Norway</remote-alias>
+              <ordinal>31</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Switzerland</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Switzerland]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Switzerland</remote-alias>
+              <ordinal>32</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>United Kingdom</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[United Kingdom]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>United Kingdom</remote-alias>
+              <ordinal>33</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Bosnia and Herzegovina</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Bosnia and Herzegovina]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Bosnia and Herzegovina</remote-alias>
+              <ordinal>34</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>31</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Montenegro</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Montenegro]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Montenegro</remote-alias>
+              <ordinal>35</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Moldova</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Moldova]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Moldova</remote-alias>
+              <ordinal>36</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Georgia</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Georgia]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Georgia</remote-alias>
+              <ordinal>37</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Albania</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Albania]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Albania</remote-alias>
+              <ordinal>38</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Türkiye</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Türkiye]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Türkiye</remote-alias>
+              <ordinal>39</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Ukraine</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Ukraine]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Ukraine</remote-alias>
+              <ordinal>40</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Kosovo*</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Kosovo*]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Kosovo*</remote-alias>
+              <ordinal>41</ordinal>
+              <family>neuzulassung.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Deutschland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='neuzulassung.csv' id='neuzulassung.csv_C7DBEAF8DB194D81B0E7C744DF2882CE'>
+            <properties context=''>
+              <relation connection='textscan.09qn5c60pqyys91b1em7n0pofgyh' name='neuzulassung.csv' table='[neuzulassung#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='de_DE' separator=';'>
+                  <column datatype='string' name='Antrieb' ordinal='0' />
+                  <column datatype='date' date-parse-format='yyyy' name='Jahr' ordinal='1' />
+                  <column datatype='integer' name='Belgium' ordinal='2' />
+                  <column datatype='integer' name='Bulgaria' ordinal='3' />
+                  <column datatype='integer' name='Czechia' ordinal='4' />
+                  <column datatype='integer' name='Denmark' ordinal='5' />
+                  <column datatype='integer' name='Germany' ordinal='6' />
+                  <column datatype='integer' name='Estonia' ordinal='7' />
+                  <column datatype='integer' name='Ireland' ordinal='8' />
+                  <column datatype='integer' name='Greece' ordinal='9' />
+                  <column datatype='integer' name='Spain' ordinal='10' />
+                  <column datatype='integer' name='France' ordinal='11' />
+                  <column datatype='integer' name='Croatia' ordinal='12' />
+                  <column datatype='integer' name='Italy' ordinal='13' />
+                  <column datatype='integer' name='Cyprus' ordinal='14' />
+                  <column datatype='integer' name='Latvia' ordinal='15' />
+                  <column datatype='integer' name='Lithuania' ordinal='16' />
+                  <column datatype='integer' name='Luxembourg' ordinal='17' />
+                  <column datatype='integer' name='Hungary' ordinal='18' />
+                  <column datatype='integer' name='Malta' ordinal='19' />
+                  <column datatype='integer' name='Netherlands' ordinal='20' />
+                  <column datatype='integer' name='Austria' ordinal='21' />
+                  <column datatype='integer' name='Poland' ordinal='22' />
+                  <column datatype='integer' name='Portugal' ordinal='23' />
+                  <column datatype='integer' name='Romania' ordinal='24' />
+                  <column datatype='integer' name='Slovenia' ordinal='25' />
+                  <column datatype='integer' name='Slovakia' ordinal='26' />
+                  <column datatype='integer' name='Finland' ordinal='27' />
+                  <column datatype='integer' name='Sweden' ordinal='28' />
+                  <column datatype='integer' name='Iceland' ordinal='29' />
+                  <column datatype='integer' name='Liechtenstein' ordinal='30' />
+                  <column datatype='integer' name='Norway' ordinal='31' />
+                  <column datatype='integer' name='Switzerland' ordinal='32' />
+                  <column datatype='integer' name='United Kingdom' ordinal='33' />
+                  <column datatype='integer' name='Bosnia and Herzegovina' ordinal='34' />
+                  <column datatype='integer' name='Montenegro' ordinal='35' />
+                  <column datatype='integer' name='Moldova' ordinal='36' />
+                  <column datatype='integer' name='Georgia' ordinal='37' />
+                  <column datatype='integer' name='Albania' ordinal='38' />
+                  <column datatype='integer' name='Türkiye' ordinal='39' />
+                  <column datatype='integer' name='Ukraine' ordinal='40' />
+                  <column datatype='integer' name='Kosovo*' ordinal='41' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='KFZ Neuzulassung Europa'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='neuzulassung.csv (Mehrere Verbindungen)' name='federated.0u9sclb004dqmt1843jvz1t7ysmk' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0u9sclb004dqmt1843jvz1t7ysmk' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0u9sclb004dqmt1843jvz1t7ysmk].[Latitude (generated)]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{F0A115E4-FE1F-4444-A3BF-DA52624BE167}' />
+    </worksheet>
+    <worksheet name='KFZ Neuzulassungen Deutschland'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='neuzulassung.csv (Mehrere Verbindungen)' name='federated.0u9sclb004dqmt1843jvz1t7ysmk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0u9sclb004dqmt1843jvz1t7ysmk'>
+            <column datatype='string' name='[Antrieb]' role='dimension' type='nominal' />
+            <column aggregation='Sum' datatype='integer' name='[Germany]' role='dimension' semantic-role='[Country].[Name]' type='ordinal' />
+            <column datatype='date' name='[Jahr]' role='dimension' type='quantitative' />
+            <column-instance column='[Antrieb]' derivation='None' name='[none:Antrieb:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Germany]' derivation='Sum' name='[sum:Germany:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Jahr]' derivation='Year-Trunc' name='[tyr:Jahr:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0u9sclb004dqmt1843jvz1t7ysmk].[none:Antrieb:nk]' />
+              <text column='[federated.0u9sclb004dqmt1843jvz1t7ysmk].[none:Antrieb:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0u9sclb004dqmt1843jvz1t7ysmk].[sum:Germany:qk]</rows>
+        <cols>[federated.0u9sclb004dqmt1843jvz1t7ysmk].[tyr:Jahr:qk]</cols>
+      </table>
+      <simple-id uuid='{AF21C7FA-33DF-4B67-AEF9-DADD326F9B87}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='KFZ Neuzulassungen Deutschland'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.0u9sclb004dqmt1843jvz1t7ysmk].[none:Antrieb:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EBBC52C0-F7C5-465A-82E3-8D86891EFD51}' />
+    </window>
+    <window class='worksheet' maximized='true' name='KFZ Neuzulassung Europa'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EAA3D98F-3840-4D04-8D87-5E635BDAA26A}' />
+    </window>
+  </windows>
+</workbook>
