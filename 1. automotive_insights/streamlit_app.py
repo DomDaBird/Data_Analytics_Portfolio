@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -11,7 +12,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 
 
-# Angepasster Titel, mittig, größer und unterstrichen
+# Positionierung Titel, mittig, größer und unterstrichen
+# Farben werden in HEX Codes angegeben
+
 st.markdown(
     """
     <h1 style='text-align: center; font-size: 60px; text-decoration: underline; color: #FFFFFF;'>
@@ -22,7 +25,10 @@ st.markdown(
 )
 
 
-# CSS für dunkelblauen Farbverlauf und karierte Überlagerung mit Waldgrün für die Seitenleiste
+# CSS für leichten dunkelblauen Farbverlauf
+# Sidebar in Violett
+
+
 page_bg_css = """
 <style>
 [data-testid="stAppViewContainer"] {
@@ -47,13 +53,15 @@ page_bg_css = """
 </style>
 """
 
+# HTML Formatierung für Streamlit anzeigen (Farbe für Hintergrund und Sidebar)
 st.markdown(page_bg_css, unsafe_allow_html=True)
 
-
+# Banner 1: Automotive Insights, Python und Neu/Gebrauchtwagen Analyse
 st.image("banner1.jpg", use_column_width=True)
 
 
-# Sidebar
+# Komplette Sidebar mit Verlinkung zu den einzelnen Themen
+
 st.sidebar.title("Inhaltsverzeichnis")
 
 # Neuzulassungen
@@ -98,17 +106,17 @@ st.sidebar.markdown("[Quellen](#quellen)", unsafe_allow_html=True)
 
 # Neuzulassungen
 
-
 # Daten laden
 data_neuzulassung = pd.read_csv('neuzulassung.csv', delimiter=';')
 
-# Summiere die Daten aller Länder, um die Gesamtneuzulassungen in Europa zu berechnen
+# Summiert Daten aller Länder, um Gesamtneuzulassungen in Europa zu berechnen
 data_neuzulassung['Europe'] = data_neuzulassung.loc[:, 'Belgium':'Kosovo*'] \
     .apply(lambda x: pd.to_numeric(x.astype(str).str.replace('.', ''), errors='coerce')).sum(axis=1)
 
-# Streamlit-Anwendung
+# Streamlit Teil zum visualisieren
 st.title('Neuzulassungen nach Antriebsart für Europa und Länder')
 
+# Bild zur visuellen Unterstützung zum Thema Neuwagen / Neuwagenzulassungen
 st.image("neuwagen.jpg", caption="Neuwagen (AI)", use_column_width=True)
 
 # Aufklappbarer Abschnitt: Auswahl des Landes und der Antriebsarten
@@ -117,19 +125,19 @@ with st.expander("Neuzulassungen eines spezifischen Landes anzeigen", expanded=F
     st.subheader("Landesauswahl")
 
     # Auswahl des Landes
-    laender = list(data_neuzulassung.columns[2:-1])  # Ignoriere 'Antrieb', 'Jahr' und 'Europe'
+    laender = list(data_neuzulassung.columns[2:-1])  # Ignoriert 'Antrieb', 'Jahr' und 'Europe'
     selected_country = st.selectbox('Wähle das Land aus', laender)
 
-    # Auswahl der Antriebsarten
+    # Auswahl aller Antriebsarten
     antriebe = data_neuzulassung['Antrieb'].unique()
     selected_antriebe = st.multiselect('Wähle die Antriebsarten aus', antriebe, default=antriebe, key="country_antriebsarten")
 
-    # Plot erstellen, wenn mindestens eine Antriebsart ausgewählt wurde
+    # Plot wenn mindestens eine Antriebsart ausgewählt wurde
     if selected_antriebe:
         plt.figure(figsize=(12, 8))
         
         for antrieb in selected_antriebe:
-            # Filtere die Daten nach Antriebsart und Land
+            # Filtert die Daten nach Antriebsart und Land
             data_filtered = data_neuzulassung[data_neuzulassung['Antrieb'] == antrieb]
             years = data_filtered['Jahr'].values
             values = pd.to_numeric(data_filtered[selected_country].astype(str).str.replace('.', ''), errors='coerce').fillna(0).values
@@ -154,15 +162,15 @@ st.markdown("<a id='neuzulassungen-in-europa-anzeigen'></a>", unsafe_allow_html=
 with st.expander("Neuzulassungen in Europa anzeigen", expanded=False):
     st.subheader("Europaweite Neuzulassungen")
 
-    # Auswahl der Antriebsarten für Europa mit einem einzigartigen Schlüssel
+    # Auswahl der Antriebsarten für Europa mit einzigartigem Schlüssel
     selected_antriebe_1 = st.multiselect('Wähle die Antriebsarten für Europa aus', antriebe, default=antriebe, key="europe_antriebsarten")
 
-    # Plot erstellen, wenn mindestens eine Antriebsart ausgewählt wurde
+    # Plot wenn mindestens eine Antriebsart ausgewählt wurde
     if selected_antriebe_1:
         plt.figure(figsize=(12, 8))
         
         for antrieb in selected_antriebe_1:
-            # Filtere die Daten nach Antriebsart für Europa
+            # Filtert die Daten nach Antriebsart für Europa
             data_filtered = data_neuzulassung[data_neuzulassung['Antrieb'] == antrieb]
             years = data_filtered['Jahr'].values
             values = data_filtered['Europe'].values
@@ -175,6 +183,13 @@ with st.expander("Neuzulassungen in Europa anzeigen", expanded=False):
         plt.ylabel('Anzahl der Neuzulassungen')
         plt.legend(title='Antriebsarten')
         plt.grid(True)
+
+
+         # Custum y-Achse für bessere Lesbarkeit 1 = 1 Mio usw. (Anzeite war 1e6)
+        def custom_formatter(x, pos):
+            return f'{int(x / 1_000_000)} Mio' if x >= 1_000_000 else f'{int(x)}'
+
+        plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(custom_formatter))
         
         # Plot in Streamlit anzeigen
         st.pyplot(plt)
@@ -185,10 +200,11 @@ with st.expander("Neuzulassungen in Europa anzeigen", expanded=False):
 
 
 
-# Daten laden und Komma zu Punkt konvertieren
+# Daten laden und Format auf Semikolon anpassen
 data_durchschnitt_verbrauch = pd.read_csv('durchschnitt_verbrauch.csv', sep=';')
 
-# Konvertiere alle Verbrauchsspalten zu numerischen Werten, indem Kommas durch Punkte ersetzt werden
+# Konvertiert alle Verbrauchsspalten zu numerischen Werten
+# Kommas werden durch Punkte ersetzt
 for column in data_durchschnitt_verbrauch.columns[1:]:
     data_durchschnitt_verbrauch[column] = pd.to_numeric(
         data_durchschnitt_verbrauch[column].astype(str).str.replace(',', '.'), errors='coerce'
@@ -203,7 +219,7 @@ with st.expander("Datenvisualisierung", expanded=False):
     # Auswahl der zu plottenden Spalten
     columns = list(data_durchschnitt_verbrauch.columns[1:])  # Ignoriert die 'Jahr'-Spalte
     
-    # Checkbox für das automatische Auswählen aller Spalten
+    # Checkbox für automatische Auswählen aller Spalten
     if 'selected_column' not in st.session_state:
         st.session_state.selected_column = columns  # Startzustand: Alle Spalten ausgewählt
 
@@ -214,7 +230,7 @@ with st.expander("Datenvisualisierung", expanded=False):
         else:
             st.session_state.selected_column = columns  # Alle auswählen
 
-    # Selectbox für die Einzelspaltenauswahl
+    # Selectbox für Einzelspaltenauswahl
     selected_column = st.selectbox('Wähle eine Spalte zum Plotten aus', columns)
 
     # Checkbox für "Alle plotten"
@@ -225,13 +241,13 @@ with st.expander("Datenvisualisierung", expanded=False):
     if plot_all:
         for column in columns:
             sns.lineplot(data=data_durchschnitt_verbrauch, x='Jahr', y=column, label=column)
-        # Berechne den Durchschnitt aller Spalten für das erste und letzte Jahr
+        # Berechnet den Durchschnitt aller Spalten für das erste und letzte Jahr
         start_avg = data_durchschnitt_verbrauch[columns].iloc[0].mean()
         end_avg = data_durchschnitt_verbrauch[columns].iloc[-1].mean()
         reduction_percent = ((start_avg - end_avg) / start_avg) * 100
     else:
         sns.lineplot(data=data_durchschnitt_verbrauch, x='Jahr', y=selected_column, label=selected_column)
-        # Berechne die prozentuale Änderung für die ausgewählte Spalte
+        # Berechnet prozentuale Änderung für ausgewählte Spalte
         start_value = data_durchschnitt_verbrauch[selected_column].iloc[0]
         end_value = data_durchschnitt_verbrauch[selected_column].iloc[-1]
         reduction_percent = ((start_value - end_value) / start_value) * 100
@@ -253,6 +269,7 @@ with st.expander("Datenvisualisierung", expanded=False):
 
 # Kraftstoffarten
 
+# Visualisierung von Tankstelle - Zapfhahn
 st.image("refuel.jpg", caption="Tankstellen", use_column_width=True)
 
 
@@ -265,23 +282,18 @@ st.title('Bestand an PKW nach Kraftstoffart und Jahr')
 # Aufklappbarer Abschnitt: Auswahl und Visualisierung
 st.markdown("<a id='bestand-an-pkw-nach-kraftstoffart-und-jahr'></a>", unsafe_allow_html=True)
 with st.expander("Datenvisualisierung", expanded=False):
-    # Annahme: Die Datei enthält die Jahre in einer Spalte und die Antriebsarten als Spaltennamen
-    # Jahre als x-Achse und Antriebsarten zur Auswahl
     jahre = data_kraftstoff['Jahr']
-    antriebe = data_kraftstoff.columns[1:]  # Ignoriere die erste Spalte ('Jahr')
+    antriebe = data_kraftstoff.columns[1:]  # Ignoriert erste Spalte ('Jahr')
 
-    # Zustand für die Auswahl der Antriebsarten initialisieren
     if 'selected_antriebe' not in st.session_state:
         st.session_state.selected_antriebe = list(antriebe)
 
-    # Button zum Auswählen oder Abwählen aller Antriebsarten
     if st.button("Alle Antriebsarten auswählen / abwählen"):
         if len(st.session_state.selected_antriebe) == len(antriebe):
-            st.session_state.selected_antriebe = []  # Auswahl leeren, wenn alle ausgewählt sind
+            st.session_state.selected_antriebe = []
         else:
-            st.session_state.selected_antriebe = list(antriebe)  # Alle auswählen
+            st.session_state.selected_antriebe = list(antriebe)
 
-    # Multiselect für die Antriebsarten mit dem session state
     selected_antriebe = st.multiselect(
         'Wähle die Antriebsarten aus',
         antriebe,
@@ -289,16 +301,13 @@ with st.expander("Datenvisualisierung", expanded=False):
         key="antriebsarten_multiselect"
     )
 
-    # Auswahl des Diagrammtyps
     diagramm_typ = st.radio("Diagrammtyp auswählen", ["Liniendiagramm", "Kuchendiagramm", "Balkendiagramm"])
 
-    # Plot erstellen, wenn mindestens eine Antriebsart ausgewählt wurde
     if selected_antriebe:
         plt.figure(figsize=(12, 8))
         
         if diagramm_typ == "Liniendiagramm":
             for antrieb in selected_antriebe:
-                # Plotten der Daten für das ausgewählte Antriebsarten
                 sns.lineplot(x=jahre, y=data_kraftstoff[antrieb], label=antrieb)
             
             plt.title('PKW-Bestand nach Kraftstoffart über die Jahre')
@@ -306,22 +315,32 @@ with st.expander("Datenvisualisierung", expanded=False):
             plt.ylabel('Bestand')
             plt.legend(title='Antriebsarten')
             plt.grid(True)
+
+            # Custom y-Achse weil 1e6 nicht gut lesbar
+            def custom_mio_formatter(x, pos):
+                return f'{int(x / 1_000_000)} Mio' if x >= 1_000_000 else str(int(x))
+
+            plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(custom_mio_formatter))
             st.pyplot(plt)
 
         elif diagramm_typ == "Kuchendiagramm":
-            # Gesamtsumme für die gewählten Antriebsarten im letzten Jahr
             latest_data = data_kraftstoff[selected_antriebe].iloc[-1]
             plt.pie(latest_data, labels=selected_antriebe, autopct='%1.1f%%', startangle=90)
             plt.title(f"Anteile der Antriebsarten im Jahr {data_kraftstoff['Jahr'].iloc[-1]}")
             st.pyplot(plt)
 
         elif diagramm_typ == "Balkendiagramm":
-            # Daten des letzten Jahres für ein Balkendiagramm
             latest_data = data_kraftstoff[selected_antriebe].iloc[-1]
             plt.bar(selected_antriebe, latest_data)
             plt.title(f"Bestand der Antriebsarten im Jahr {data_kraftstoff['Jahr'].iloc[-1]}")
             plt.xlabel('Antriebsart')
             plt.ylabel('Bestand')
+
+            # Custom y-Achse weil 1e7 nicht so gut lesbar wie 10 Mio usw.
+            def custom_mio_formatter(x, pos):
+                return f'{int(x / 1_000_000)} Mio' if x >= 1_000_000 else str(int(x))
+
+            plt.gca().yaxis.set_major_formatter(mticker.FuncFormatter(custom_mio_formatter))
             st.pyplot(plt)
 
     else:
@@ -346,7 +365,7 @@ st.image("Deutschlandkarte1.jpg", caption="Ladeinfrastruktur Deutschland", use_c
 st.markdown("<a id='ladesaeulen-entwicklung-und-prognose-nach-bundesland'></a>", unsafe_allow_html=True)
 with st.expander("Datenvisualisierung", expanded=False):
     # Auswahl der zu plottenden Spalten
-    columns = list(data_ladesaeulen.columns[1:])  # Ignoriere die 'Jahr'-Spalte
+    columns = list(data_ladesaeulen.columns[1:])  # Ignoriert die 'Jahr'-Spalte
     
     # Zustand für die Auswahl der Spalten initialisieren
     if 'selected_column' not in st.session_state:
@@ -438,14 +457,14 @@ with st.expander("Datenvisualisierung", expanded=False):
     marken = data_gebrauchtwagen['brand'].unique()
     selected_marke = st.selectbox("Wähle eine Marke aus", marken)
 
-    # Filtere die Daten nach der ausgewählten Marke
+    # Filtert Daten nach ausgewählten Marke
     data_filtered = data_gebrauchtwagen[data_gebrauchtwagen['brand'] == selected_marke]
 
-    # Berechne die Anzahl der Modelle pro Modelltyp und begrenze auf die Top 15
+    # Berechnet Anzahl der Modelle pro Modelltyp und begrenze auf Top 15
     model_counts = data_filtered['model'].value_counts().reset_index().head(15)
     model_counts.columns = ['model', 'count']
 
-    # Balkendiagramm mit Seaborn erstellen
+    # Balkendiagramm
     plt.figure(figsize=(12, 8))
     sns.barplot(data=model_counts, x='model', y='count', palette='viridis')
     plt.title(f'Anzahl der Modelle für {selected_marke} (Top 15)')
@@ -460,7 +479,7 @@ with st.expander("Datenvisualisierung", expanded=False):
 
 
 
-# Konvertiere 'price_in_euro', 'mileage_in_km' und 'power_ps' zu numerischen Werten, entferne nicht konvertierbare Werte
+# Konvertiert 'price_in_euro', 'mileage_in_km' und 'power_ps' zu numerischen Werten, entfernt nicht konvertierbare Werte
 data_gebrauchtwagen['price_in_euro'] = pd.to_numeric(data_gebrauchtwagen['price_in_euro'], errors='coerce')
 data_gebrauchtwagen['mileage_in_km'] = pd.to_numeric(data_gebrauchtwagen['mileage_in_km'], errors='coerce')
 data_gebrauchtwagen['power_ps'] = pd.to_numeric(data_gebrauchtwagen['power_ps'], errors='coerce')
@@ -532,28 +551,28 @@ with st.expander("Datenvisualisierung nach Auswahl", expanded=False):
 
 
 
-# Konvertiere 'price_in_euro', 'mileage_in_km', 'power_ps' und bereite die Reichweite vor
+# Konvertiert 'price_in_euro', 'mileage_in_km', 'power_ps' und bereitet die Reichweite vor
 data_gebrauchtwagen['price_in_euro'] = pd.to_numeric(data_gebrauchtwagen['price_in_euro'], errors='coerce')
 data_gebrauchtwagen['mileage_in_km'] = pd.to_numeric(data_gebrauchtwagen['mileage_in_km'], errors='coerce')
 data_gebrauchtwagen['power_ps'] = pd.to_numeric(data_gebrauchtwagen['power_ps'], errors='coerce')
 
-# Extrahiere die Reichweite als Zahl aus 'fuel_consumption_g_km'
+# Extrahiert die Reichweite als Zahl aus 'fuel_consumption_g_km'
 data_gebrauchtwagen['fuel_consumption_g_km'] = data_gebrauchtwagen['fuel_consumption_g_km'].str.extract(r'(\d+)').astype(float)
 
 # Streamlit-Anwendung
 st.title("Analyse für Elektro- und Hybridfahrzeuge")
 
-# Filtere nur Elektro- und Hybridfahrzeuge
+# Filtert nur Elektro- und Hybridfahrzeuge
 data_electric_hybrid = data_gebrauchtwagen[data_gebrauchtwagen['fuel_type'].isin(['Electric', 'Hybrid'])]
 
-# Abschnitt für die Marke und die Top-10 Modelle nach Anzahl
+# Abschnitt für Marke und Top-10 Modelle nach Anzahl
 st.markdown("<a id='top-10-modelle-fuer-elektro-und-hybridfahrzeuge'></a>", unsafe_allow_html=True)
 with st.expander("Top-10 Modelle für Elektro- und Hybridfahrzeuge", expanded=False):
     # Auswahl der Marke
     marken_electric_hybrid = data_electric_hybrid['brand'].unique()
     selected_brand = st.selectbox("Wähle eine Marke für Elektro- oder Hybridfahrzeuge aus", marken_electric_hybrid)
 
-    # Filtere Daten basierend auf der ausgewählten Marke
+    # Filtert Daten basierend auf der ausgewählten Marke
     filtered_data = data_electric_hybrid[data_electric_hybrid['brand'] == selected_brand]
 
     # Top 10 elektrische Modelle nach Anzahl
@@ -579,15 +598,15 @@ with st.expander("Top-10 Modelle für Elektro- und Hybridfahrzeuge", expanded=Fa
 # Abschnitt für Details zu ausgewählten Modellen
 st.markdown("<a id='detaillierte-informationen-zu-elektro-oder-hybridmodellen'></a>", unsafe_allow_html=True)
 with st.expander("Detaillierte Informationen zu Elektro- oder Hybridmodellen", expanded=False):
-    # Filtere Marken, die Elektro- oder Hybridfahrzeuge anbieten
+    # Filtert Marken, die Elektro- oder Hybridfahrzeuge anbieten
     brands_with_electric_or_hybrid = data_electric_hybrid['brand'].unique()
     selected_brand_details = st.selectbox("Wähle eine Marke für Detailinformationen", brands_with_electric_or_hybrid)
 
-    # Filtere Modelle basierend auf der ausgewählten Marke und Fuel-Typ
+    # Filtert Modelle basierend auf der ausgewählten Marke und Fuel-Typ
     models_with_electric_or_hybrid = data_electric_hybrid[data_electric_hybrid['brand'] == selected_brand_details]['model'].unique()
     selected_model = st.selectbox("Wähle ein elektrisches oder hybrides Modell aus", models_with_electric_or_hybrid)
 
-    # Filtere die Daten für das ausgewählte Modell
+    # Filtert die Daten für das ausgewählte Modell
     model_data = data_electric_hybrid[(data_electric_hybrid['brand'] == selected_brand_details) & (data_electric_hybrid['model'] == selected_model)]
 
     # Plot für Preis
@@ -639,7 +658,7 @@ with st.expander("Detaillierte Informationen zu Elektro- oder Hybridmodellen", e
     # Machine Learning
 
 
-# Konvertiere 'price_in_euro', 'year', 'mileage_in_km' und 'power_ps' zu numerischen Werten
+# Konvertiert 'price_in_euro', 'year', 'mileage_in_km' und 'power_ps' zu numerischen Werten
 data_gebrauchtwagen['price_in_euro'] = pd.to_numeric(data_gebrauchtwagen['price_in_euro'], errors='coerce')
 data_gebrauchtwagen['year'] = pd.to_numeric(data_gebrauchtwagen['year'], errors='coerce')
 data_gebrauchtwagen['mileage_in_km'] = pd.to_numeric(data_gebrauchtwagen['mileage_in_km'], errors='coerce')
@@ -659,24 +678,24 @@ with st.expander("Preisvorhersage nach Fahrzeugmerkmalen", expanded=False):
     selected_model = st.selectbox("Wähle ein Modell aus", filtered_data['model'].unique(), key="unique_model_select")
     model_data = filtered_data[filtered_data['model'] == selected_model]
 
-    # Wähle die relevanten Features und das Ziel
+    # Wählt die relevanten Features und das Ziel
     features = ['year', 'mileage_in_km', 'power_ps', 'color', 'transmission_type', 'fuel_type']
     target = 'price_in_euro'
-    model_data = model_data.dropna(subset=features + [target])  # Entferne Zeilen mit fehlenden Werten
+    model_data = model_data.dropna(subset=features + [target])  # Entfernt Zeilen mit fehlenden Werten
 
     # Kodierung der kategorischen Variablen
     encoders = {}
     for col in ['color', 'transmission_type', 'fuel_type']:
         le = LabelEncoder()
         model_data[col] = le.fit_transform(model_data[col])
-        encoders[col] = le  # Speichere den Encoder mit Klassen für spätere Verwendung
+        encoders[col] = le  # Speichert den Encoder mit Klassen für spätere Verwendung
 
-    # Splitte die Daten in Trainings- und Testsets
+    # Splittet die Daten in Trainings- und Testsets
     X = model_data[features]
     y = model_data[target]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Trainiere den Random Forest Regressor
+    # Trainieret den Random Forest Regressor
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
 
@@ -692,7 +711,7 @@ with st.expander("Preisvorhersage nach Fahrzeugmerkmalen", expanded=False):
         if mode_value in encoders[col].classes_:
             year_data[col] = encoders[col].transform([mode_value])[0]
         else:
-            year_data[col] = 0  # Verwende einen Standardwert (z.B. 0), falls nicht bekannt
+            year_data[col] = 0  # Verwendet einen Standardwert (z.B. 0), falls nicht bekannt
 
     # Vorhersagen für die Jahresreichweite generieren
     predicted_prices = model.predict(year_data)
