@@ -5,9 +5,11 @@
       Gebrauchtwagenbörse inklusive Random Forest für Preisbestimmung
       (Streamlit) Link: https://appapp-ztgcmgujrivklp2tnava6q.streamlit.app/
 
- 3. Entwicklung der Mobilität:
+ 2. Entwicklung der Mobilität:
       Wie spiegeln sich technologische, politische und gesellschaftliche Veränderungen in den KFZ Neuzulassungen,
       der Effizienz von Kraftstoffarten und dem Ausbau der Ladeinfrastruktur wider
       (Tableau Public)
 
-    
+ 3. Titanic - Analyse der Passagierliste:
+      Analyse der Überlebensraten im Titanic-Datensatz unter Nutzung von Python und Seaborn. Die Visualisierungen zeigen,
+      wie Faktoren wie Geschlecht, Klasse und Alter die Überlebenschancen beeinflusst haben.
