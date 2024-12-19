@@ -1,4 +1,7 @@
-# Data Projekte
+
+<img width="857" alt="Bildschirmfoto 2024-12-18 um 19 02 25" src="https://github.com/user-attachments/assets/5a5656a4-2e55-435e-94bf-f8c8cd6c7063" />
+
+# Data Analytics Projekte
  
  1. (Abschlussprojekt) Automotive Insights:
       Aktuelle Datenlisten von Neuwagenzulassungen und Fahrzeugbestand inklusive alternativer Antriebsarten
