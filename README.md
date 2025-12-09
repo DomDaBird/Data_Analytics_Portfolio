@@ -53,3 +53,13 @@
       Entwicklung eines Machine-Learning-Modells zur Klassifikation von Pinguinarten basierend auf
       Merkmalen wie Schnabellänge, Schnabeltiefe, Flügellänge und Körpergewicht.
       Der Fokus lag auf Datenanalyse, Feature Engineering und Modelloptimierung.
+
+
+
+8. AutoScout24 - Analyse von Fahrzeugverkäufen:
+     Dieses Projekt analysiert über 46.000 Fahrzeugverkäufe von AutoScout24 im Zeitraum 2011–2021.
+     Ziel war es, Preisentwicklungen zu verstehen und ein Modell zur Preisvorhersage auf Basis von Fahrzeugmerkmalen zu entwickeln.
+     - Vergleich von Marken, Modellhäufigkeiten und Laufleistungen
+     - Untersuchung der Preisentwicklung über Zeit, Kilometerstand und Leistung
+     - Entwicklung von Regressionsmodellen (Lineare Regression, kNN, Random Forest)
+     - Evaluation der Modellgüte mit MSE, RMSE, MAE und R²
